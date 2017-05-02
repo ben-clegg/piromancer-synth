@@ -2,7 +2,7 @@
 A Raspberry Pi based semi-modular synthesiser, using [Pyo](https://github.com/belangeo/pyo).
 
 ## Licensing
-All contents of this repository are released under GPLv3, with the exception of synth/mcpaccess.py, a modified version of [ladyada's MCP3008 driver program](https://gist.github.com/ladyada/3151375), which is released into the public domain in the same manner as the original.
+All contents of this repository are released under GPLv3, with the exception of `synth/mcpaccess.py`, a modified version of [ladyada's MCP3008 driver program](https://gist.github.com/ladyada/3151375), which is released into the public domain in the same manner as the original.
 
 ## System Requirements
 This software was originally designed for the original Raspberry Pi Model B, but this was confirmed to have insufficient compute power to run effectively.
