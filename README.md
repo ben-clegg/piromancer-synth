@@ -31,9 +31,11 @@ $ sudo python setup.py install --install-layout=deb --use-jack
 ```
 
 Provide the user with ownership of the audio output device, by adding the following to "/etc/dbus-1/system.conf":
+```
 <policy user="pi">
      <allow own="org.freedesktop.ReserveDevice1.Audio0"/>
 </policy>
+```
 
 Clone this project's repository to the pi user's home directory:
 ```console
