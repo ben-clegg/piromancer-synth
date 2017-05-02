@@ -43,7 +43,7 @@ $ git clone https://github.com/BenClegg/piromancer-synth
 ```
 
 ## Execution
-Simply run startPiromancer.sh to start the synthesiser. This script can be run on boot by executing `sudo crontab -e` and adding the following:
+Simply run `startPiromancer.sh` to start the synthesiser. This script can be run on boot by executing `sudo crontab -e` and adding the following:
 ```
 @reboot sh /home/pi/piromancer-synth/startPiromancer.sh >/home/pi/logs/cronlog 2>&1
 ```
