@@ -11,16 +11,24 @@ However, the software functions correctly on a Raspberry Pi 3. More connections 
 
 ## Installation
 Install Jack audio server with alsa support:
-sudo apt-get install jackd2 alsaplayer-jack
+```console
+$ sudo apt-get install jackd2 alsaplayer-jack
+```
 
 Install [Pyo's dependencies](https://gist.github.com/pwalsh/8594869):
-sudo apt-get install python-dev libjack-jackd2-dev libportmidi-dev portaudio19-dev liblo-dev libsndfile-dev python-dev python-tk python-imaging-tk python-wxgtk2.8
+```console
+$ sudo apt-get install python-dev libjack-jackd2-dev libportmidi-dev portaudio19-dev liblo-dev libsndfile-dev python-dev python-tk python-imaging-tk python-wxgtk2.8
+```
 
 Clone Pyo's repository, and enter its directory:
-git clone https://github.com/belangeo/pyo.git
+```console
+$ git clone https://github.com/belangeo/pyo.git
+```
 
 [Install Pyo with Jack support, and Debian install layout](http://ajaxsoundstudio.com/pyodoc/compiling.html):
-sudo python setup.py install --install-layout=deb --use-jack
+```console
+$ sudo python setup.py install --install-layout=deb --use-jack
+```
 
 Provide the user with ownership of the audio output device, by adding the following to "/etc/dbus-1/system.conf":
 <policy user="pi">
@@ -28,10 +36,12 @@ Provide the user with ownership of the audio output device, by adding the follow
 </policy>
 
 Clone this project's repository to the pi user's home directory:
-git clone https://github.com/BenClegg/piromancer-synth
+```console
+$ git clone https://github.com/BenClegg/piromancer-synth
+```
 
 ## Execution
-Simply run startPiromancer.sh to start the synthesiser. This script can be run on boot by executing "sudo crontab -e" and adding the following:
+Simply run startPiromancer.sh to start the synthesiser. This script can be run on boot by executing `sudo crontab -e` and adding the following:
 @reboot sh /home/pi/piromancer-synth/startPiromancer.sh >/home/pi/logs/cronlog 2>&1
 
 If this "run on boot" cronjob is set, ownership of the audio output should instead be set to the root user, by changing the added code in "/etc/dbus-1/system.conf" to:
