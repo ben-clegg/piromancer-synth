@@ -44,11 +44,15 @@ $ git clone https://github.com/BenClegg/piromancer-synth
 
 ## Execution
 Simply run startPiromancer.sh to start the synthesiser. This script can be run on boot by executing `sudo crontab -e` and adding the following:
+```
 @reboot sh /home/pi/piromancer-synth/startPiromancer.sh >/home/pi/logs/cronlog 2>&1
+```
 
 If this "run on boot" cronjob is set, ownership of the audio output should instead be set to the root user, by changing the added code in "/etc/dbus-1/system.conf" to:
+```
 <policy user="root">
      <allow own="org.freedesktop.ReserveDevice1.Audio0"/>
 </policy>
+```
 
 A "logs" directory should also be created inside the pi user's home directory.
