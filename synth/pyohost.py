@@ -263,4 +263,5 @@ while True:
     #logger() # Uncomment to print debugging logs
 
     # Scan ctl
-    a = CtlScan(ctl_scan)
+    midictl = CtlScan(ctl_scan)
+    print(midictl)
