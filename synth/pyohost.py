@@ -37,6 +37,10 @@ s.start()
 midi = Notein(poly=1, scale=1) # scale=1 : pitch in Hz
                                 # poly=1 : 1 stream - monophonic
 
+# Get midi controller 7 input value. More controllers can be defined, see doc:
+# http://ajaxsoundstudio.com/pyodoc/api/classes/midi.html#midictl
+midi_ctl_in = Midictl(7, minscale=10, maxscale=13000, init = 1000, channel = 1)
+
 frq = 480 # Initialise frequency
 frq = midi['pitch'] #Note pitch (frequency in Hz)
 
@@ -117,7 +121,7 @@ def m_filter(input_signal, modFreq=False):
     # Apply filter
     # http://ajaxsoundstudio.com/pyodoc/api/classes/filters.html
 
-    local_frq = frq  # Scale to input frequency
+    local_frq = midi_ctl_in # Set cutoff as midi controller 7's value
     # Note: MCP input can be used as frequency instead
     # if the cutoff potentiometer is functional
 
@@ -218,10 +222,9 @@ def logger():
     print("Auxiliary conns: " + str(auxConns))
     print("==========================")
 
-def ctl_scan(ctlnum):
+def ctl_scan(ctlnum, midichnl):
     print(ctlnum)
-
-
+    print(midichnl)
 
 # Generate audio, applying signal processing where necessary
 audio = createSignal()
@@ -262,6 +265,5 @@ while True:
             audio = createSignal()
     #logger() # Uncomment to print debugging logs
 
-    # Scan ctl
-    midictl = CtlScan(ctl_scan)
-    print(midictl)
+    # Scan ctl, to find midi controller numbers
+    #midi_controller = CtlScan2(ctl_scan)
