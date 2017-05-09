@@ -220,6 +220,7 @@ def logger():
 
 def ctl_scan(ctlnum, midichnl):
     print(ctlnum)
+    print(midichnl)
 
 
 
