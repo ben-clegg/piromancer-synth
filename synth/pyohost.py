@@ -119,7 +119,8 @@ def m_filter(input_signal, modFreq=False):
     # Apply filter
     # http://ajaxsoundstudio.com/pyodoc/api/classes/filters.html
 
-    local_frq = frq  # Scale to input frequency
+    #local_frq = frq  # Scale to input frequency
+    local_frq = midi_ctl_in
     # Note: MCP input can be used as frequency instead
     # if the cutoff potentiometer is functional
 
@@ -265,5 +266,3 @@ while True:
 
     # Scan ctl, to test midi controller
     #midi_controller = CtlScan2(ctl_scan)
-
-    print(midi_ctl_in)
