@@ -37,6 +37,8 @@ s.start()
 midi = Notein(poly=1, scale=1) # scale=1 : pitch in Hz
                                 # poly=1 : 1 stream - monophonic
 
+midi_ctl_in = Midictl(7, minscale=10, maxscale=10000, init = 1000, channel = 1)
+
 frq = 480 # Initialise frequency
 frq = midi['pitch'] #Note pitch (frequency in Hz)
 
@@ -222,8 +224,6 @@ def ctl_scan(ctlnum, midichnl):
     print(ctlnum)
     print(midichnl)
 
-
-
 # Generate audio, applying signal processing where necessary
 audio = createSignal()
 
@@ -263,5 +263,7 @@ while True:
             audio = createSignal()
     #logger() # Uncomment to print debugging logs
 
-    # Scan ctl
-    midictl = CtlScan2(ctl_scan)
+    # Scan ctl, to test midi controller
+    #midi_controller = CtlScan2(ctl_scan)
+
+    print(midi_ctl_in)
