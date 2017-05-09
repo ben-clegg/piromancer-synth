@@ -218,6 +218,9 @@ def logger():
     print("Auxiliary conns: " + str(auxConns))
     print("==========================")
 
+def ctl_scan(ctlnum):
+    print(ctlnum)
+
 
 
 # Generate audio, applying signal processing where necessary
@@ -258,3 +261,6 @@ while True:
             # Regenerate audio
             audio = createSignal()
     #logger() # Uncomment to print debugging logs
+
+    # Scan ctl
+    a = CtlScan(ctl_scan)
