@@ -218,7 +218,7 @@ def logger():
     print("Auxiliary conns: " + str(auxConns))
     print("==========================")
 
-def ctl_scan(ctlnum):
+def ctl_scan(ctlnum, midichnl):
     print(ctlnum)
 
 
@@ -263,4 +263,4 @@ while True:
     #logger() # Uncomment to print debugging logs
 
     # Scan ctl
-    a = CtlScan(ctl_scan)
+    midictl = CtlScan2(ctl_scan)
