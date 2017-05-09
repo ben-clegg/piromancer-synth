@@ -26,7 +26,7 @@ FILTER_BP = 5 # Bandpass - const bandwidth
 FILTER_BR = 6 # Band reject (bandstop) - const bandwidth
 FILTER_NOTCH = 7 # Same as BR, but narrow const bandwidth
 
-WAIT = 0.6 # How long to wait if button press detected, to cycle types if button held
+WAIT = 1.0 # How long to wait if button press detected, to cycle types if button held
 class Buttons:
     def __init__(self):
         # Use board pin numbering - compatible with different RPi revisions
